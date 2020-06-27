@@ -29,8 +29,7 @@ public class BFSAlgorithm extends Algorithm {
                 break;
             }
             for (Node n: node.nodes) {
-                if (n.getParent() == null)
-                {
+                if (n.getParent() == null) {
                     n.setParent(node);
                 }
                 if (!n.isVisited) {
@@ -40,8 +39,7 @@ public class BFSAlgorithm extends Algorithm {
                 }
 
             }
-            System.out.println(node.getPos());
-
+            // System.out.println(node.getPos());
             view.print();
         }
         showWay();
@@ -52,10 +50,10 @@ public class BFSAlgorithm extends Algorithm {
         while (node != graph.start) {
             Node parent = node.getParent();
             if(!node.equals(graph.start)) {
-                view.setSignOnPosition(parent.getPos(), '=');
+                view.setSignOnPosition(parent.getPos(), ConsoleSigns.PATH);
             }
-            view.print();
             node = parent;
+            view.print();
         }
     }
 }

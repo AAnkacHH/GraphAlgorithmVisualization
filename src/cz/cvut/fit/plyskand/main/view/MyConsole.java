@@ -5,11 +5,16 @@ import java.awt.*;
 
 public class MyConsole extends JFrame {
 
+    final private int WINDOW_HEIGHT = 900;
+    final private int WINDOW_WIDTH = 1300;
+    final private int FONT_SIZE = 17;
+    final private String FONT = Font.MONOSPACED;
+
     private JTextArea textArea;
 
     public MyConsole() {
         super();
-        setSize(1300, 900);
+        setSize(WINDOW_WIDTH, WINDOW_HEIGHT);
         setTitle("Algorithm visualization");
         setResizable(false);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
@@ -26,12 +31,9 @@ public class MyConsole extends JFrame {
         textArea.setBackground(Color.BLACK);
         textArea.setForeground(Color.LIGHT_GRAY);
         textArea.setCaretPosition(textArea.getDocument().getLength());
-        textArea.setFont(new Font(Font.MONOSPACED, Font.PLAIN, 18));
+        textArea.setFont(new Font(FONT, Font.PLAIN, FONT_SIZE));
     }
 
-    public void refreshTextArea() {
-        textArea.setText("");
-    }
 
     public void addText(String text) {
         textArea.setText(text);

@@ -79,6 +79,15 @@ public class Area {
         return false;
     }
 
+    public Boolean isAccessible(Pos pos) {
+        if (isValid(pos)) {
+            return (area[pos.x][pos.y] != ConsoleSigns.OPENED_NODE) &&
+                    (area[pos.x][pos.y] != ConsoleSigns.BORDER) &&
+                    (area[pos.x][pos.y] != ConsoleSigns.UNDEFINED);
+        }
+        return false;
+    }
+
     public void addPosNeighborIfItFresh(Pos pos, List<Pos> list) {
         if (isFresh(pos)||isEnd(pos)) {
             list.add(pos);

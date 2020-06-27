@@ -13,14 +13,12 @@ public class ConsoleView implements View {
 
     @Override
     public void print() throws InterruptedException {
-        Thread.sleep(10);
-        console.refreshTextArea();
+        Thread.sleep(100);
         console.addText(area.toString());
     }
 
     @Override
     public void setSignOnPosition(Pos position, char sign) {
-
         this.area.setChar(position, sign);
     }
 }

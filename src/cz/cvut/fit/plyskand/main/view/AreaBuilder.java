@@ -8,7 +8,7 @@ import java.util.List;
 
 public class AreaBuilder {
 
-    private Area area = null;
+    private Area area;
     private List<String> lines;
 
     public AreaBuilder(@NotNull List<String> lines) throws IllegalArgumentException {
@@ -39,12 +39,14 @@ public class AreaBuilder {
      * Set start and end point into the map
      * */
     private void setDestination(int height) {
-        // I can do this because the input is always valid
+
+        // getting start position
         String start = lines.get(height).replace("start ","");
         List<String> startPositions = Arrays.asList(start.split("\\s*,\\s*"));
         int stX = Integer.parseInt(startPositions.get(0));
         int stY = Integer.parseInt(startPositions.get(1));
 
+        // getting end position
         String end = lines.get(height + 1).replace("end ","");
         List<String> endPositions = Arrays.asList(end.split("\\s*,\\s*"));
         int enX = Integer.parseInt(endPositions.get(0));

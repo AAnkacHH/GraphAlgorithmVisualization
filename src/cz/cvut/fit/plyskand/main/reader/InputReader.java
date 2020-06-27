@@ -15,8 +15,11 @@ public class InputReader {
         this.fileName = fileName;
     }
 
-    public List<String> read (){
-        List<String> lines = new ArrayList<String>();
+    /**
+     * This method read input form file and create a list of lines.
+     * */
+    public List<String> read () {
+        List<String> lines = new ArrayList<>();
         try {
             InputStream input = new FileInputStream(fileName);
             Scanner in = new Scanner(input);

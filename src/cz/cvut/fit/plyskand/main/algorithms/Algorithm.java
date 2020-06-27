@@ -13,5 +13,6 @@ public abstract class Algorithm {
         this.view = view;
     }
 
+    /** This method run the algorithm from start node. */
     public abstract void run() throws InterruptedException;
 }

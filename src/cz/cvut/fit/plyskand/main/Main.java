@@ -12,18 +12,20 @@ import java.util.List;
 public class Main {
 
     public static void main(String[] args) throws InterruptedException {
-        MyConsole console = new MyConsole();
-        console.setVisible(true);
-        InputReader reader = new InputReader("./Resources/72.txt");
+        /* Reader initialization */
+        InputReader reader = new InputReader("./Resources/26.txt");
         List<String> list = reader.read();
+        /* Area initialization */
         AreaBuilder areaBuilder = new AreaBuilder(list);
         Area area = areaBuilder.build();
+        /* Graph initialization */
         GraphBuilder graphBuilder = new GraphBuilder(area);
         Graph graph = graphBuilder.build();
-
-
+        /* View initialization */
+        MyConsole console = new MyConsole();
+        console.setVisible(true);
         View view = new ConsoleView(area, console);
-
+        /* Algorithm initialization */
         Algorithm bfs = new BFSAlgorithm(graph, view);
         bfs.run();
     }
